@@ -1,41 +1,27 @@
-@each $size in $size-maps {
-  .pr-#{$size} {
+$paddingMap: 10 20 30;
+
+@each $size in $paddingMap {
+  .pr#{$size} {
     padding-right: #{$size}px;
   }
-  .mr-#{$size} {
-    margin-right: #{$size}px;
-  }
-  .pl-#{$size} {
+}
+@each $size in $paddingMap {
+  .pl#{$size} {
     padding-left: #{$size}px;
   }
-  .ml-#{$size} {
-    margin-left: #{$size}px;
-  }
-  .pt-#{$size} {
+}
+@each $size in $paddingMap {
+  .pt#{$size} {
     padding-top: #{$size}px;
   }
-  .mt-#{$size} {
-    margin-top: #{$size}px;
-  }
-  .pb-#{$size} {
+}
+@each $size in $paddingMap {
+  .pb#{$size} {
     padding-bottom: #{$size}px;
   }
-  .mb-#{$size} {
-    margin-bottom: #{$size}px;
-  }
-  .p-#{$size} {
-    padding: #{$size}px;
-  }
-  .m-#{$size} {
-    margin: #{$size}px;
-  }
 }
-
-@each $size in $width-map {
-  .w-#{$size} {
-    width: #{$size}px;
-  }
-  .h-#{$size} {
-    height: #{$size}px;
+@each $size in $paddingMap {
+  .p#{$size} {
+    padding: #{$size}px;
   }
 }

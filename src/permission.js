@@ -2,14 +2,10 @@ import store from '@/store'
 import router from './router'
 import { getToken } from '@/utils/auth'
 
-const whiteList = ['/login', '/404', '/401', '/demo']
+const whiteList = ['/login', '/404', '/401']
 
 router.beforeEach(async (to, from, next) => {
-  // 由于有全局缓存控制，所以下面的无效了，没有缓存控制，则可选，参考base-template分支
-  // const CancelToken = axios.CancelToken
-  // store.getters.source.cancel && store.getters.source.cancel()
-  // store.commit('app/SET_SOURCE', CancelToken.source())
-
+  console.log(to.path)
   const hasToken = getToken()
   if (hasToken) {
     if (to.path === '/login') {
@@ -37,4 +33,5 @@ router.beforeEach(async (to, from, next) => {
     }
   }
 })
+
 router.afterEach(() => {})

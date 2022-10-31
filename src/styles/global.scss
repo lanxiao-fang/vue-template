@@ -1,18 +1,10 @@
 @import './_size';
-@import './_flex';
 @import './_color';
 
-html,
 body {
-  height: 100%;
-}
-
-body {
-  font-family: $font-family-regular;
-  font-size: 14px;
-  line-height: 1.5;
-  color: $main-color;
-  background: $bg-color;
-  margin: 0;
-  padding: 0;
+  /* prettier-ignore */
+  max-width: 640PX;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', STHeiti,
+    'Microsoft Yahei', Tahoma, Simsun, sans-serif;
 }

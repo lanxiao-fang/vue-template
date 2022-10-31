@@ -17,14 +17,14 @@ module.exports = [
       if (userInfo && userInfo.pass === pass) {
         return {
           code: 200,
-          data: userInfo,
-          message: 'success'
+          data: userInfo
         }
-      }
-      return {
-        code: 29999,
-        data: null,
-        message: '用户名或密码错误'
+      } else {
+        return {
+          code: 29999,
+          data: null,
+          message: '用户名或密码错误'
+        }
       }
     }
   },
@@ -37,37 +37,32 @@ module.exports = [
       if (!info) {
         return {
           code: 39999,
-          data: null,
           message: 'token已过期，请重新登录'
         }
       }
       return {
         code: 200,
-        data: info,
-        message: 'success'
+        data: info
       }
     }
   },
   {
     url: '/user/logout',
     type: 'put',
-    response: () => ({
-      code: 200,
-      data: null,
-      message: '退出登录成功'
-    })
+    response: () => {
+      return {
+        code: 200,
+        data: 'success'
+      }
+    }
   },
   {
     url: '/user/delete',
     type: 'delete',
-    response: req => {
-      const { token } = req.headers
-      const info = Object.values(users).find(user => user.token === token)
-      delete users[info.name]
+    response: () => {
       return {
         code: 200,
-        data: null,
-        message: '删除成功'
+        data: 'success'
       }
     }
   }
