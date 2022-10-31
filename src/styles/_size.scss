@@ -1,5 +1,3 @@
-$size-maps: 10 20 30;
-
 @each $size in $size-maps {
   .pr-#{$size} {
     padding-right: #{$size}px;
@@ -30,5 +28,14 @@ $size-maps: 10 20 30;
   }
   .m-#{$size} {
     margin: #{$size}px;
+  }
+}
+
+@each $size in $width-map {
+  .w-#{$size} {
+    width: #{$size}px;
+  }
+  .h-#{$size} {
+    height: #{$size}px;
   }
 }
