@@ -1,8 +1,13 @@
 <template>
   <div>
+    <svg-icon icon-class="user" />
     <input type="text" placeholder="gating" class="mr-10" v-model="form.user" />
     <input type="text" placeholder="123456" class="mr-10" v-model="form.pass" />
-    <input type="button" @click="login" value="登录" />
+    <div class="login-btn" @click="login">
+      <svg-icon icon-class="login" />
+      <span>登录</span>
+    </div>
+    <svg-icon class-name="pointer" icon-class="user" />
   </div>
 </template>
 
@@ -48,3 +53,13 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.login-btn {
+  display: inline-block;
+}
+.login-btn:hover {
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+}
+</style>

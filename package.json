@@ -18,7 +18,8 @@
     "review": "jscpd ./src",
     "version": "node ./build/change-version.js",
     "release": "bash ./build/release.sh",
-    "release:note": "conventional-changelog --config ./build/changelog-generator/index.js --infile CHANGELOG.md --same-file  -s -r 0"
+    "release:note": "conventional-changelog --config ./build/changelog-generator/index.js --infile CHANGELOG.md --same-file  -s -r 0",
+    "svgo": "svgo -f src/assets/icons/svg --config=src/assets/icons/svgo.config.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,8 @@
   "dependencies": {
     "axios": "^0.20.0",
     "core-js": "^3.6.5",
+    "svg-sprite-loader": "^6.0.11",
+    "svgo": "^3.0.0",
     "vue": "^2.6.12",
     "vue-router": "^3.4.4",
     "vuex": "^3.5.1"

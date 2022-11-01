@@ -2,6 +2,7 @@
 const path = require('path')
 const StylelintPlugin = require('stylelint-webpack-plugin')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
+
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
@@ -170,5 +171,18 @@ module.exports = {
       })
       config.optimization.runtimeChunk('single')
     })
+
+    config.module.rule('svg').exclude.add(resolve('src/assets/icons')).end()
+
+    config.module
+      .rule('icons')
+      .test(/\.svg$/)
+      .include.add(resolve('src/assets/icons'))
+      .end()
+      .use('svg-sprite-loader')
+      .loader('svg-sprite-loader')
+      .options({
+        symbolId: 'myicon-[name]'
+      })
   }
 }

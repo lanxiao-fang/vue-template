@@ -12,6 +12,8 @@ Vue.use(log)
 // 全局过滤器
 import filters from './filters'
 
+import './assets/icons'
+
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })
